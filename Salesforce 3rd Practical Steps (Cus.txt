@@ -1,0 +1,142 @@
+Salesforce 3rd Practical Steps (Custom Object + CRUD Operations)
+
+1. Login to Salesforce account.
+
+2. Open Salesforce Setup.
+
+3. In search box, search:
+
+   * “Object Manager”
+
+4. Open Object Manager.
+
+5. Click:
+
+   * “Create” → “Custom Object”
+
+6. Enter details:
+Lets say example Shopkeeper
+   * Label: Shopkeeper
+   * Plural Label: Shopkeepers
+   * Object Name: Shopkeeper
+
+7. Save the object.
+
+8. Now create custom fields inside Shopkeeper object.
+
+Create fields like:
+
+a) Shopkeeper_Name__c → Text
+b) Age__c → Number
+c) Email__c → Email
+d) Shop_Name__c → Text
+e) Mobile_Number__c → Phone
+
+9. Save all fields.
+
+IMPORTANT ****
+Now go to Setup
+Search Tabs
+
+Inside Tabs click New
+
+Select the newly created object  
+
+tab style you can use anything
+Next save
+
+10. Open “App Launcher”.
+
+11. Search and open:
+
+* Shopkeepers
+
+12. Click:
+
+* “New”
+
+13. Enter sample record values:
+
+* Shopkeeper Name → Rahul
+* Age → 35
+* Email → [rahul@gmail.com](mailto:rahul@gmail.com)
+* Shop Name → Rahul Mart
+* Mobile Number → 9876543210
+
+14. Click “Save”.
+
+(Record inserted successfully)
+
+---
+
+## READ Operation
+
+15. Open Developer Console.
+
+Inside developer console go to File click Open 
+
+Entity type select objects
+In Entities search for newly created object here Shopkeeper__c
+Double click it 
+You will be able to see Fields
+
+16. Open:
+
+* Query Editor
+
+17. Execute this SOQL query:
+
+```sql
+SELECT Id, Name, Age__c, Email__c, Shop_Name__c, Mobile_Number__c 
+FROM Shopkeeper__c
+```
+
+18. Click:
+
+* “Execute”
+
+19. Records will be displayed.
+
+---
+
+## UPDATE Operation
+
+20. Open Shopkeeper record.
+
+21. Click:
+
+* “Edit”
+
+22. Change values:
+
+* Age → 36
+* Shop Name → Rahul Super Mart
+
+23. Click:
+
+* “Save”
+
+(Record updated successfully)
+
+---
+
+## DELETE Operation
+
+24. Open record.
+
+25. Click:
+
+* Delete
+
+26. Confirm deletion.
+
+(Record deleted successfully)
+
+---
+
+## CRUD Operations Performed
+
+C → Create record
+R → Read record using SOQL
+U → Update record
+D → Delete record

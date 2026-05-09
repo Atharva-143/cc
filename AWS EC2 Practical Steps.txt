@@ -1,0 +1,46 @@
+AWS EC2 Practical Steps
+
+Login to AWS account.
+
+In AWS Console, search and open EC2 service.
+
+Click on “Launch Instance”.
+
+Enter instance name.
+
+Go down and Create new key pair:
+
+Download .pem file.
+
+Launch instance 
+
+Move that .pem file in Home directory from Downloads
+
+Connect to instance
+
+Go in SSH client section
+chmod 400 ".pem"
+
+ssh -i ".pem" ec2-user@ec2-.compute-1.amazonaws.com
+
+paste this kind of two commands in terminal one by one 
+type 'yes'
+
+Now
+nano test.py
+
+Enter python code for eg
+print("Hello World")
+
+ctrl o 
+Enter
+ctrl x 
+
+python3 test.py
+
+output will be displayed1
+
+if python is not available then install it
+
+After performance stop the instance and then terminate  it 
+

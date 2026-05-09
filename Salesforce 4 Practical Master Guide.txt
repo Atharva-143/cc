@@ -1,0 +1,663 @@
+# Salesforce Practical Master Guide
+
+## Purpose of this Guide
+
+This guide helps you understand how to build ANY simple Salesforce management system step-by-step for practical exams.
+
+No matter what system comes in exam:
+
+* Banking System
+* Hospital Management
+* Student Management
+* Event Management
+* Library Management
+* Hotel Management
+* Inventory Management
+* Employee Management
+
+The logic remains almost the same.
+
+---
+
+# Core Understanding
+
+Every Salesforce practical project mainly contains:
+
+1. Objects
+2. Fields
+3. Relationships
+4. Flow Automation
+5. Reports
+
+If you understand these 5 things, you can build almost any project.
+
+---
+
+# STEP 1 — Understand the Scenario
+
+First ask yourself:
+
+## What are the MAIN entities?
+
+Example:
+
+### Banking System
+
+* Customer
+* Transaction
+
+### Hospital Management
+
+* Patient
+* Doctor
+* Appointment
+
+### Student Management
+
+* Student
+* Course
+* Enrollment
+
+### Event Management
+
+* Event
+* Participant
+* Registration
+
+These entities become OBJECTS.
+
+---
+
+# STEP 2 — Create Objects
+
+## What is an Object?
+
+Object = Database table.
+
+Every object stores a specific type of information.
+
+---
+
+# Generic Steps to Create Object
+
+1. Setup
+2. Object Manager
+3. Create → Custom Object
+4. Fill:
+
+   * Label
+   * Plural Label
+   * Record Name
+5. Enable:
+
+   * Allow Reports
+   * Allow Activities
+6. Deployment Status → Deployed
+7. Save
+
+---
+
+# STEP 3 — Add Fields
+
+## What are Fields?
+
+Fields store data.
+
+Examples:
+
+* Name
+* Age
+* Balance
+* Date
+* Status
+* Amount
+
+---
+
+# Common Field Types
+
+## Text
+
+Used for:
+
+* Name
+* Department
+* Disease
+* Location
+
+## Number
+
+Used for:
+
+* Age
+* Amount
+* Experience
+* Duration
+
+## Phone
+
+Used for:
+
+* Contact number
+
+## Email
+
+Used for:
+
+* Email IDs
+
+## Date
+
+Used for:
+
+* Appointment date
+* Enrollment date
+* Registration date
+
+## Picklist
+
+Used for fixed options.
+
+Example:
+
+* Status
+* Type
+
+---
+
+# STEP 4 — Understand Relationships
+
+## Why relationships are needed?
+
+To connect objects.
+
+Example:
+
+Appointment connects:
+
+* Patient
+* Doctor
+
+Enrollment connects:
+
+* Student
+* Course
+
+Registration connects:
+
+* Event
+* Participant
+
+---
+
+# Most Important Relationship
+
+## Lookup Relationship
+
+This is the easiest and most used relationship.
+
+### Steps:
+
+1. Open child object
+2. Fields & Relationships
+3. New
+4. Lookup Relationship
+5. Select parent object
+6. Save
+
+---
+
+# How to Identify Parent and Child?
+
+## Parent = Main entity
+
+## Child = Connecting entity
+
+Example:
+
+Enrollment:
+
+* Student lookup
+* Course lookup
+
+So Enrollment becomes bridge object.
+
+---
+
+# STEP 5 — Create Tabs
+
+Sometimes object does not appear in App Launcher.
+
+### Steps:
+
+1. Open object
+2. Tabs
+3. New
+4. Choose icon/style
+5. Save
+
+---
+
+# STEP 6 — Create Flow Automation
+
+## What is Flow?
+
+Flow automates tasks.
+
+Example:
+
+* Update balance automatically
+* Set status automatically
+* Update counts
+
+---
+
+# Most Common Flow Type
+
+## Record-Triggered Flow
+
+Runs automatically when record is created.
+
+---
+
+# Generic Flow Creation Steps
+
+1. Setup
+2. Flows
+3. New Flow
+4. Record-Triggered Flow
+5. Select Object
+6. Trigger = Record Created
+7. Optimize = Actions and Related Records
+8. Done
+
+---
+
+# Simplest Automation
+
+Automatically set Status.
+
+Examples:
+
+* Appointment → Scheduled
+* Registration → Registered
+* Enrollment → Enrolled
+
+---
+
+# Generic Update Records Logic
+
+1. Add Update Records
+2. Specify conditions
+3. Object = same object
+4. Condition:
+
+   * Record ID = $Record.Record ID
+5. Set Field Values:
+
+   * Status = value
+6. Save
+7. Activate Flow
+
+---
+
+# Banking System Special Logic
+
+Banking system usually needs:
+
+* Deposit
+* Withdraw
+
+This requires calculations.
+
+---
+
+# Banking Flow Logic
+
+## Deposit
+
+New Balance = Old Balance + Amount
+
+## Withdraw
+
+New Balance = Old Balance - Amount
+
+---
+
+# Common Flow Elements
+
+## Decision
+
+Used to check conditions.
+
+Example:
+
+* Deposit?
+* Withdraw?
+
+---
+
+## Get Records
+
+Fetches related record.
+
+Example:
+
+* Get Customer
+* Get Patient
+* Get Student
+
+---
+
+## Assignment
+
+Used for calculations.
+
+Example:
+
+* Balance = Balance + Amount
+
+---
+
+## Update Records
+
+Used to save changes.
+
+---
+
+# STEP 7 — Test Records
+
+Always create sample data.
+
+Example:
+
+## Banking
+
+* Customers
+* Transactions
+
+## Hospital
+
+* Patients
+* Doctors
+* Appointments
+
+## Student
+
+* Students
+* Courses
+* Enrollments
+
+---
+
+# STEP 8 — Create Reports
+
+## Why Reports?
+
+Reports display data in structured format.
+
+Faculty usually expects reports.
+
+---
+
+# Common Report Types
+
+## Object Reports
+
+Example:
+
+* Transactions
+* Appointments
+* Enrollments
+
+## Relationship Reports
+
+Example:
+
+* Appointments with Doctors
+* Enrollments with Students
+
+---
+
+# Generic Report Creation Steps
+
+1. Open Reports
+2. New Report
+3. Select report type
+4. Start Report
+5. Add columns
+6. Group rows
+7. Save & Run
+
+---
+
+# Most Useful Grouping
+
+Group by:
+
+* Customer
+* Student
+* Doctor
+* Event
+* Course
+
+This makes reports look professional.
+
+---
+
+# Common Report Examples
+
+## Banking
+
+* Deposit Report
+* Withdraw Report
+* Common Customers
+
+## Hospital
+
+* Doctor-wise Appointments
+* Patient Appointment Report
+
+## Student
+
+* Course-wise Students
+* Student Enrollment Report
+
+## Event
+
+* Event-wise Participants
+* Participant Registration Report
+
+---
+
+# STEP 9 — Custom Report Types
+
+Used when faculty asks:
+
+* Show records WITH and WITHOUT related records.
+
+Example:
+
+* Students with and without enrollment
+* Doctors with and without appointments
+
+---
+
+# Generic Custom Report Type Steps
+
+1. Setup
+2. Report Types
+3. New Custom Report Type
+4. Select Primary Object
+5. Next
+6. Relate another object
+7. Choose:
+
+   * Records may or may not have related records
+8. Save
+
+---
+
+# IMPORTANT Viva Questions
+
+## What is Salesforce?
+
+Cloud-based CRM platform.
+
+## What is Object?
+
+Database table.
+
+## What is Field?
+
+Stores data.
+
+## What is Lookup Relationship?
+
+Connects two objects.
+
+## What is Flow?
+
+Automation tool.
+
+## What is Record-Triggered Flow?
+
+Runs automatically when record is created or updated.
+
+## What is Report?
+
+Displays data in structured format.
+
+---
+
+# How to Think in Exam
+
+If a new system comes:
+
+## STEP 1
+
+Identify entities.
+
+## STEP 2
+
+Create objects.
+
+## STEP 3
+
+Add fields.
+
+## STEP 4
+
+Create lookup relationships.
+
+## STEP 5
+
+Create one simple Flow.
+
+## STEP 6
+
+Create reports.
+
+That is enough.
+
+---
+
+# Example Thinking Method
+
+## Library Management
+
+Entities:
+
+* Book
+* Student
+* Issue Record
+
+Relationship:
+Student ← Issue Record → Book
+
+Flow:
+Status = Issued
+
+Reports:
+
+* Student-wise books
+* Book issue report
+
+---
+
+# Example — Hotel Management
+
+Entities:
+
+* Guest
+* Room
+* Booking
+
+Relationship:
+Guest ← Booking → Room
+
+Flow:
+Status = Booked
+
+Reports:
+
+* Room bookings
+* Guest booking report
+
+---
+
+# Example — Employee Management
+
+Entities:
+
+* Employee
+* Department
+* Attendance
+
+Relationship:
+Employee ← Attendance → Department
+
+Flow:
+Status = Present
+
+Reports:
+
+* Department-wise employees
+* Attendance report
+
+---
+
+# Final Practical Strategy
+
+During exam:
+
+1. Stay calm
+2. Do not overcomplicate
+3. Use same pattern for all systems
+4. Keep one working flow
+5. Make at least two reports
+6. Add sample records
+7. Explain confidently
+
+---
+
+# Final Generic Viva Explanation
+
+“We created custom objects, relationships, automation flows, and reports using Salesforce declarative tools to manage and automate business processes.”
+
+---
+
+# Final Tip
+
+Almost every management system follows this pattern:
+
+Main Object A ← Bridge Object → Main Object B
+
+Examples:
+
+Customer ← Transaction → Banking
+Student ← Enrollment → Course
+Patient ← Appointment → Doctor
+Participant ← Registration → Event
+
+Once you understand this pattern, you can build any simple Salesforce project.
